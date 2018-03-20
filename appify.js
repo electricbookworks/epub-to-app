@@ -77,7 +77,7 @@ function addNavButton() {
 
     // Remove previous additions, in case we're processing the same files again.
     const thingsToStrip = {
-        files: 'www/' + opsRoot + '/**/*html',
+        files: 'www/**/*html',
         from: [/<!--epub-to-app-navigation-->[\s\S]*<!--epub-to-app-navigation-->/gm, /<!--epub-to-app-styles-->[\s\S]*<!--epub-to-app-styles-->/gm],
         to: ''
     };
@@ -95,7 +95,7 @@ function addNavButton() {
     // Add styles and nav button
     getData(epubFullPath, function(data) {
         const replaceOptions = {
-            files: 'www/' + opsRoot + '/**/*html',
+            files: 'www/**/*html',
             from: ['</head>', '</body>'],
             to: [htmlStylesTemplate + '</head>', htmlNavButtonTemplate + '</body>']
         };
@@ -104,7 +104,7 @@ function addNavButton() {
         // Replace nav path in the nav button
         getData(epubFullPath, function(data) {
             const replaceNavPath = {
-                files: 'www/' + opsRoot + '/**/*html',
+                files: 'www/**/*html',
                 from: '<!--path-to-nav-document-->',
                 to: data.navDoc
             };
