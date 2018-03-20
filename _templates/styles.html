@@ -10,11 +10,10 @@
         width: 100%;
     }
     body.cover #content {
-        margin: 50% auto 0 auto;
-        padding: 0;
+        display: table;
         height: 100%;
         height: 100vh;
-        transform: translatey(-50%);
+        padding: 0;
         width: 100%;
     }
     body.cover h1 {
@@ -22,11 +21,13 @@
         font-size: 0;
     }
     div.cover {
+        display: table-cell;
+        height: 100%;
+        height: 100vh;
         margin: 0 auto;
         padding: 0;
         text-indent: 0;
-        height: 100%;
-        height: 100vh;
+        vertical-align: middle;
     }
     img.cover {
         max-height: 100%;
