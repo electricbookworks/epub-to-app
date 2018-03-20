@@ -1,0 +1,82 @@
+<!--epub-to-app-styles-->
+<style type="text/css">
+	/* App CSS */
+	/* Image for landing page */
+	body.cover {
+		background-color: black;
+		height: 100%;
+		height: 100vh;
+		text-align: center;
+		width: 100%;
+	}
+	body.cover #content {
+		margin: 50% auto 0 auto;
+		padding: 0;
+		height: 100%;
+		height: 100vh;
+		transform: translatey(-50%);
+		width: 100%;
+	}
+	body.cover h1 {
+		line-height: 0;
+		font-size: 0;
+	}
+	div.cover {
+		margin: 0 auto;
+		padding: 0;
+		text-indent: 0;
+		height: 100%;
+		height: 100vh;
+	}
+	img.cover {
+		max-height: 100%;
+		max-width: 100%;
+		border: 1px solid #eeeeee;
+	}
+	/* Button to book navigation */
+	#epub-to-app-navigation {
+	    background-color: #333333;
+	    border-radius: 2.5em;
+	    bottom: 1.5em;
+	    color: white;
+	    display: table;
+	    height: 2.5em;
+	    position: fixed;
+	    right: 1.5em;
+	    text-align: center;
+	    vertical-align: middle;
+	    width: 2.5em;
+	    line-height: 2.5em;
+	}
+	#epub-to-app-navigation:hover {
+    	box-shadow:  0 0 2px #555555;
+	}
+	#epub-to-app-navigation a {
+	    color: white;
+	    font-size: 2em;
+	    text-decoration: none;
+	    display: table-cell;
+	    vertical-align: middle;
+	}
+	/* Nav page. Often not styled in epubs,
+	   so we're adding basic styles here. */
+	nav {
+	    font-family: sans-serif;
+	    background-color: #eeeeee;
+	    padding: 0.5em;
+	}
+	nav ol:first-child {
+		padding-left: 0;
+	}
+	nav li {
+		margin-bottom: 0.5em;
+	}
+	nav a {
+		text-decoration: none;
+	}
+	/* Don't show nav button on nav page */
+	nav + #epub-to-app-navigation {
+		display: none;
+	}
+</style>
+<!--epub-to-app-styles-->
