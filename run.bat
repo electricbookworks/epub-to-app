@@ -77,7 +77,7 @@ title Epub to app converter
 
 	:updateContentExtractEpub
 		:: Quietly unzip the _source epub into www.
-		echo Extracting epub to www directory...
+		echo Extracting %epubFileName% to the app's www directory...
 		unzip -q -u "%location%\_source\%epubFileName%" -d www
 		if exist "%location%\www\*.*" (
 			echo Epub extracted.
