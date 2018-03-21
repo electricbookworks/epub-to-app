@@ -2,9 +2,11 @@
 
 This turns an epub into a very rudimentary Android app.
 
+More specifically, it copies and adapts an epub's content into the content of very basic Apache Cordova project, which you can then adapt and build into an app for any platform that Cordova supports.
+
 ## Dependencies
 
-- Currently, Windows (to use the `run.bat` script, though you could hack your way in the command line on any OS)
+- Currently, Windows (to use the `run.bat` script, alternatively see [Manual usage](#manual-usage) below)
 - Node.js
 - Android Studio
 - Apache Cordova
@@ -22,7 +24,7 @@ This turns an epub into a very rudimentary Android app.
 The `run.bat` script for Windows (the last step above) simply manages the following steps, which you could also do manually:
 
 1. Unzip the epub's contents to the `www` folder. (That is, the `mimetype` file should end up in `www`.)
-2. In the root directory, run `node appify.js --epub "_source/yourepub.epub"`, where `yourepub.epub` is the filename of your epub in `_source`.
+2. In the root directory, run `node appify.js --epub _source/yourepub.epub`, where `yourepub.epub` is the filename of your epub in `_source`.
 3. In the root directory, run `cordova build`. (Sometimes you need to run `cordova platform rm android && cordova platform add android` first.)
 4. In the root directory, run `cordova run --emulator`. (Assuming you have Android Studio already set up with a default emulator.)
 
