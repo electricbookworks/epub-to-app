@@ -69,16 +69,19 @@ function createIndex() {
 };
 createIndex();
 
-// Use replace to add the navigation button
-// to all book pages in the app.
-function addNavButton() {
+// Add the HTML templates to all book pages in the app.
+function addTemplates() {
 
     console.log('Adding nav button to pages...');
 
     // Remove previous additions, in case we're processing the same files again.
+    // To do: this should happen before adding anything; we may need a callback here.
+    console.log('Removing old epub-to-app HTML snippets...');
     const thingsToStrip = {
         files: 'www/**/*html',
-        from: [/<!--epub-to-app-navigation-->[\s\S]*<!--epub-to-app-navigation-->/gm, /<!--epub-to-app-styles-->[\s\S]*<!--epub-to-app-styles-->/gm],
+        from: [/<!--epub-to-app-navigation-->[\s\S]*<!--epub-to-app-navigation-->/gm,
+        /<!--epub-to-app-styles-->[\s\S]*<!--epub-to-app-styles-->/gm,
+        /<!--epub-to-app-head-elements-->[\s\S]*<!--epub-to-app-head-elements-->/gm],
         to: ''
     };
     replace(thingsToStrip);
@@ -88,6 +91,7 @@ function addNavButton() {
     try {  
         var htmlStylesTemplate = fs.readFileSync('_templates/styles.html', 'utf8');
         var htmlNavButtonTemplate = fs.readFileSync('_templates/navButton.html', 'utf8');
+        var htmlHeadMetaTemplate = fs.readFileSync('_templates/headMeta.html', 'utf8');
     } catch(e) {
         console.log('Error:', e.stack);
     }
@@ -97,7 +101,7 @@ function addNavButton() {
         const replaceOptions = {
             files: 'www/**/*html',
             from: ['</head>', '</body>'],
-            to: [htmlStylesTemplate + '</head>', htmlNavButtonTemplate + '</body>']
+            to: [htmlHeadMetaTemplate + htmlStylesTemplate + '</head>', htmlNavButtonTemplate + '</body>']
         };
         replace(replaceOptions);
 
@@ -114,7 +118,7 @@ function addNavButton() {
     });
 
 };
-addNavButton();
+addTemplates();
 
 // // Sample functions for seeing data in the console
 // getData(epubFullPath, function(data) {

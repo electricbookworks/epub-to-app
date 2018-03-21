@@ -76,8 +76,9 @@
     nav a {
         text-decoration: none;
     }
-    /* Don't show nav button on nav page */
-    nav + #epub-to-app-navigation {
+    /* Don't show nav button on nav page or landing page */
+    nav + #epub-to-app-navigation,
+    body.cover #epub-to-app-navigation {
         display: none;
     }
 </style>
