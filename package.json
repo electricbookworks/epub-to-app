@@ -19,7 +19,7 @@
   "homepage": "https://github.com/fireandlion/siyavula-maths-12-app#readme",
   "devDependencies": {
     "cordova-android": "^6.2.3",
-    "cordova-ios": "^4.4.0",
+    "cordova-ios": "^6.3.0",
     "cordova-plugin-whitelist": "^1.3.2",
     "epub-parser": "^0.2.5",
     "replace-in-file": "^3.2.0",
